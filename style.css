@@ -151,11 +151,11 @@ html, body {
 	z-index: 10;
 	overflow:hidden;
 	position:absolute;
-	bottom: 25px;
+	bottom: 50px;
 	width:18px;
 	margin: -12px;
 	height:40px;
-	border:4px solid #aaa;
+	border:4px solid white;
 	border-radius:30px;
 	transform: translateX(37%);
 }
@@ -169,7 +169,7 @@ html, body {
 	width:4px;
 	height:4px;
 	margin-left: -3px;
-	background-color: #aaa;
+	background-color: white;
 	border-radius:2px;
 	animation: mouse-wheel 2.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
@@ -221,11 +221,21 @@ html, body {
 	right: -40%;
 }
 
-.background {
+.box {
 	position: relative;
-	top: -25px;
+}
+
+.box.a {
+	top: -50px;
 	width: 75%;
 	height: 350px;
 	background: rgb(83,14,33);
 	background: linear-gradient(90deg, rgba(83,14,33,1) 0%, rgba(219,95,83,1) 100%);
+}
+
+.box.b {
+	width: 100%;
+	height: 300%;
+	background: rgb(161,193,241);
+	background: linear-gradient(0deg, rgba(161,193,241,1) 0%, rgba(251,207,219,1) 100%);
 }
