@@ -122,11 +122,11 @@ html, body {
 
 .fore {
   z-index: 10;
-  transform: translateZ(0);
+  transform: translateZ(-1px) scale(2);
 }
 
 .back{
-  transform: translateZ(-1px) scale(2);
+  transform: translateZ(0);
 }
 
 .peach {
@@ -149,7 +149,7 @@ html, body {
 }
 
 .intro h1 {
-	font-size: 60px;
+	font-size: 5em;
 	font-family: Butler;
 	font-weight: bold;
 	letter-spacing: 18px;
@@ -157,7 +157,7 @@ html, body {
 
 .intro h5 {
 	margin: 15px 0px;
-	font-size: 25px;
+	font-size: 1.5em;
 	font-family: Butler;
 }
 
@@ -231,7 +231,7 @@ html, body {
 
 .girl {
 	position: absolute;
-	width: 275px;
+	width: 16em;
 	z-index: 10;
 }
 
@@ -263,4 +263,26 @@ html, body {
 	height: 300%;
 	background: rgb(161,193,241);
 	background: linear-gradient(0deg, rgba(161,193,241,1) 0%, rgba(251,207,219,1) 100%);
+}
+
+.art {
+
+}
+
+.art.a {
+	float: right;
+}
+
+.art.a h1 {
+	font-family: sans-serif;
+	margin: 10px 0;
+}
+
+.video.a {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	float: right;
+	margin-top: 50px;
+	right: 5%;
 }
