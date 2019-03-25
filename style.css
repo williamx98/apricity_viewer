@@ -492,13 +492,13 @@ html, body {
 	display: inline-block;
 }
 
-/*@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
 	.fore {
 	  z-index: 50;
-	  transform: translateZ(0px) scale(1);
+	  transform: unset;
 	}
 
 	.back {
-	  transform: translateZ(0);
+	  transform: unset;
 	}
-}*/
+}
