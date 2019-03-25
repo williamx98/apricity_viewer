@@ -502,4 +502,8 @@ html, body {
 	  z-index: -10;
 	  transform: unset;
 	}
+
+	.parallax {
+	  perspective: unset;
+	}
 }
