@@ -557,6 +557,9 @@ html, body {
 		padding-bottom: 2750px;
 	}
 
+	.introbox {
+		top: 30% !important;
+	}
 
 	.introbox h1 {
 		font-size: 7vw;
@@ -567,7 +570,7 @@ html, body {
 	}
 
 	.introbox p {
-		font-size: 2vw;
+		font-size: 1.75vw;
 	}
 
 	.girl {
