@@ -52,6 +52,8 @@ html, body {
 	height: 100%;
 	background-color: black;
 	transform: translateZ(0);
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 @font-face {
@@ -505,5 +507,157 @@ html, body {
 
 	.parallax {
 	  perspective: unset;
+	}
+
+	.introbox {
+	}
+
+	.introbox h1 {
+		transform: translateX(10px);
+		font-size: 8vw;
+	}
+
+	.introbox h5 {
+		font-size: 4vw;
+	}
+
+	.introbox p {
+		width: 80%;
+		font-size: 2.5vw;
+	}
+
+	.box.a {
+		width: 95%;
+	}
+
+	.row {
+		flex-direction: column;
+	}
+
+	.row.a img {
+		height: 300px;
+		margin: 0 50px 50px 0;
+		align-self: flex-end;
+		z-index: 15;
+		transform: unset;
+	}
+
+	.row.a .sun {
+		height: auto;
+		width: 80%;
+		align-self: center;
+		margin-top: -50px;
+	}
+
+	.art.a.marco {
+		padding-right: 15px;
+		height: auto;
+		width: 75%;
+		align-self: center;
+	}
+
+	.art.a {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.art.a h1 {
+		width: 75%;
+		align-self: center;
+	}
+
+	.art.a h1 {
+		font-size: 0.75em;
+		margin: 2px 0;
+	}
+
+	.girl.left {
+		top: -250px;
+		left: -100px;
+		transform: unset;
+		height: 150px;
+		width: auto;
+		position: absolute;
+	}
+
+	.girl.right {
+		transform: unset;
+		height: 150px;
+		width: auto;
+		top: -250px;
+		left: 50px;
+	}
+
+	.row.b img {
+		height: 300px;
+		max-width: 90%;
+		margin-top: 35px;
+		transform: unset;
+	}
+
+	.row.b .hooks {
+		height: auto;
+		width: 300px;
+		align-self: center;
+	}
+
+	.iteration {
+		max-width: 90%;
+	}
+
+	.seas1 {
+		height: auto;
+		width: 80%;
+		align-self: center;
+		margin: 0;
+	}
+
+	.seas2 {
+		height: auto;
+		width: 80%;
+		align-self: center;
+		margin: 0;
+	}
+
+	.row.f .fish {
+		height: auto;
+		width: 95%;
+	}
+
+	.row.f .alter {
+		height: auto;
+		width: 90%;
+	}
+
+	.row.f .laying {
+		height: auto;
+		width: 90%;
+		align-self: center;
+	}
+
+	.row.g img {
+		height: auto;
+		width: 100%;
+		transform: unset;
+	}
+
+	.mobilething {
+		width: 100%;
+	}
+
+	.video2 {
+		width: 95%;
+	}
+
+	.box.b .peachpom {
+		margin-top: 50%;
+	}
+
+	.box.b .notpeachpom {
+		padding-top: 50%;
+	}
+
+	.box.b .pompeiipom {;
+		padding-top: 50%;
 	}
 }
