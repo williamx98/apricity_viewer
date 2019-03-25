@@ -494,11 +494,12 @@ html, body {
 
 @media only screen and (max-width: 800px) {
 	.fore {
-	  z-index: 50;
+	  z-index: unset;
 	  transform: unset;
 	}
 
 	.back {
+	  z-index: -10;
 	  transform: unset;
 	}
 }
