@@ -519,6 +519,21 @@ html, body {
 		flex-direction: column;
 	}
 
+	.girl-container {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.3;
+	}
+
+	.mgirl {
+		height: 25%;
+		padding-bottom: 50%;
+	}
+
 	#thing2 h1 {
 		font-size: 9vw;
 		margin-left: 18px;
@@ -596,24 +611,12 @@ html, body {
 		margin: 2px 0;
 	}
 
-
 	.girl.left {
-		opacity: .25;
-		top: -150px;
-		left: -100px;
-		transform: unset;
-		height: 150px;
-		width: auto;
-		position: absolute;
+		display: none;
 	}
 
 	.girl.right {
-		opacity: .25;
-		transform: unset;
-		height: 150px;
-		width: auto;
-		top: -150px;
-		left: 50px;
+		display: none;
 	}
 
 	.row.b img {
