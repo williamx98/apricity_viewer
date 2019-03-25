@@ -688,4 +688,8 @@ html, body {
 	.box.b .pompeiipom {;
 		padding-top: 50%;
 	}
+
+	.border.box {
+		display: none;
+	}
 }
