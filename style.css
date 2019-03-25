@@ -765,7 +765,7 @@ html, body {
 @media only screen and (max-width: 400px) {
 	.box.b .peachpom {
 		margin-top: 550px;
-		transform: translateX(-75px);
+		transform: translateX(0px);
 	}
 
 	.box.b .notpeachpom {
@@ -776,6 +776,7 @@ html, body {
 	.box.b .pompeiipom {
 		padding-top: 500px;
 		padding-bottom: 1750px;
+		transform: translateX(0px);
 	}
 
 	.row.bottom {
