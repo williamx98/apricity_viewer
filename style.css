@@ -498,12 +498,19 @@ html, body {
 }
 
 @media only screen and (max-width: 800px) {
+	html, body {
+		overflow-x: hidden;
+	}
+
+
 	.parallax {
 	  perspective: unset;
 	  height: 100%;
 	  overflow-y: unset;
 	  perspective-origin-x: unset;
 	  scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: hidden;
 	}
 
 	#thing2 {
@@ -680,19 +687,108 @@ html, body {
 		width: 95%;
 	}
 
+	.box.b {
+		margin-top: 100%;
+	}
+
+	.row.bottom {
+		padding-bottom: 50px;
+	}
+
 	.box.b .peachpom {
-		margin-top: 50%;
+		margin-top: 1150px;
+		transform: translateX(-75px);
 	}
 
 	.box.b .notpeachpom {
-		padding-top: 50%;
+		width: 40%;
+		max-width: 600px;
+		padding-top: 1150px;
+		transform: translateX(150px);
 	}
 
-	.box.b .pompeiipom {;
-		padding-top: 50%;
+	.box.b .pompeiipom {
+		width: 40%;
+		max-width: 600px;
+		padding-top: 1150px;
+		padding-bottom: 2100px;
+		transform: translateX(-150px);
 	}
 
 	.border.box {
 		display: none;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.box.b .pompeiipom {
+		padding-bottom: 1625px;
+	}
+}
+
+
+@media only screen and (max-width: 600px) {
+	.box.b .peachpom {
+		margin-top: 750px;
+		transform: translateX(-75px);
+	}
+
+	.box.b .notpeachpom {
+		width: 40%;
+		max-width: 600px;
+		padding-top: 950px;
+		transform: translateX(150px);
+	}
+
+	.box.b .pompeiipom {
+		width: 40%;
+		max-width: 600px;
+		padding-top: 950px;
+		padding-bottom: 1850px;
+		transform: translateX(-150px);
+	}
+
+	.row.bottom {
+		padding-bottom: 50px;
+	}
+
+	.credits {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.box.b .pompeiipom {
+		padding-bottom: 1225px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.box.b .peachpom {
+		margin-top: 550px;
+		transform: translateX(-75px);
+	}
+
+	.box.b .notpeachpom {
+		width: 40%;
+		max-width: 600px;
+		padding-top: 500px;
+		transform: translateX(150px);
+	}
+
+	.box.b .pompeiipom {
+		width: 40%;
+		max-width: 600px;
+		padding-top: 500px;
+		padding-bottom: 1750px;
+		transform: translateX(-150px);
+	}
+
+	.row.bottom {
+		padding-bottom: 50px;
+	}
+
+	.credits {
+		width: 90%;
 	}
 }
