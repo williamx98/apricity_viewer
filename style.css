@@ -757,7 +757,7 @@ html, body {
 
 	.row.f .laying {
 		height: auto;
-		width: 90%;
+		width: 90% !important;
 		align-self: center;
 	}
 
