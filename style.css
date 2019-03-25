@@ -125,7 +125,7 @@ html, body {
   transform: translateZ(-1px) scale(2);
 }
 
-.back{
+.back {
   transform: translateZ(0);
 }
 
@@ -148,27 +148,6 @@ html, body {
 	text-align: center;
 }
 
-.intro h1 {
-	font-size: 7em;
-	font-family: Butler;
-	font-weight: bold;
-	letter-spacing: 18px;
-}
-
-.intro h5 {
-	margin: 15px 0px;
-	font-size: 2.3em;
-	font-family: Butler;
-}
-
-.intro p {
-	width: 500px;
-	font-family: Roboto,sans-serif;
-	font-weight: 100;
-	margin: 0 auto;
-	font-size: 1.0em;
-}
-
 .text-container {
 	position: relative;
 }
@@ -177,13 +156,13 @@ html, body {
 	z-index: 10;
 	overflow:hidden;
 	position:absolute;
-	bottom: 50px;
+	bottom: 75px;
 	width:18px;
 	margin: -12px;
 	height:40px;
 	border:4px solid white;
 	border-radius:30px;
-	transform: translateX(37%);
+	left: 49%;
 }
 
 .mouse:after {
@@ -243,13 +222,12 @@ html, body {
 }
 
 .girl.left {
-	top: 100%;
-	left: -25%;
+	top: 50%;
+	transform: translateX(-140%);
 }
 
 .girl.right {
-	top: -50%;
-	right: -50%;
+	transform: translate(65%, -25%);
 }
 
 .border {
@@ -260,6 +238,33 @@ html, body {
 
 .box {
 	position: static;
+}
+
+.introbox {
+	color: white;
+	text-align: center;
+	top: 40%;
+}
+
+.introbox h1 {
+	font-size: 7em;
+	font-family: Butler;
+	font-weight: bold;
+	letter-spacing: 18px;
+}
+
+.introbox h5 {
+	margin: 15px 0px;
+	font-size: 2.3em;
+	font-family: Butler;
+}
+
+.introbox p {
+	width: 500px;
+	font-family: Roboto,sans-serif;
+	font-weight: 100;
+	margin: 0 auto;
+	font-size: 1.0em;
 }
 
 .box.a {
@@ -299,7 +304,7 @@ html, body {
 .box.b .pompeiipom {
 	width: 40%;
 	max-width: 600px;
-	padding-top: 1000px;
+	padding-top: 2000px;
 	padding-bottom: 3750px;
 	transform: translateX(250px);
 }
@@ -318,7 +323,7 @@ html, body {
 .cover {
 	margin: 50px 50px 0px 50px;
 	width: 50%;
-	max-width: 750px;
+	max-width: 600px;
 }
 
 .box.footer {
@@ -343,6 +348,21 @@ html, body {
 
 .video.a {
 
+}
+
+.iteration {
+	width: 600px;
+	margin: 25px;
+}
+
+.seas1 {
+	width: 400px;
+	margin: 25px;
+}
+
+.seas2 {
+	width: 500px;
+	margin: 25px;
 }
 
 .art-container {
@@ -433,6 +453,7 @@ html, body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-bottom: 500px;
 }
 
 .sub-container {
@@ -466,7 +487,4 @@ html, body {
 
 .dancetext {
 	display: inline-block;
-}
-
-.dancevideo {
 }
