@@ -426,14 +426,18 @@ html, body {
 }
 
 .row.g {
+	position: relative;
+	overflow: hidden;
 	justify-content: center;
+	width: 100%;
 }
 
 .row.g img {
 	margin-top: 35px;
-	height: 650px;
-	width: auto;
-	transform: translate(-150px, -35px);
+	height: 750px;
+	width: 918px;
+	margin-bottom: 35px;
+	transform: translateX(-50px);
 }
 
 
@@ -455,7 +459,7 @@ html, body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 500px;
+	padding-bottom: 50px;
 	width: 100%;
 }
 
@@ -494,6 +498,91 @@ html, body {
 
 #thing2 {
 	display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+	.row.f * {
+		margin: 25px 5px !important;
+	}
+
+	.iteration {
+		width: 550px !important;
+	}
+
+	.row.f .seas1 {
+		width: 250px !important;
+		margin-right: 50px !important;
+	}
+
+	.row.f .seas2 {
+		width: 250px !important;
+		margin-right: 50px !important;
+	}
+
+	.art.a {
+		padding: 0 15px;
+		width: 350px;
+	}
+
+	.row.a img {
+		margin-right: 15px;
+	}
+
+	.row.b img {
+		height: 500px;
+		transform: translateX(20px);
+	}
+
+	.mobile.fish {
+		height: auto !important;
+		width: 500px;
+	}
+
+	.mobile.alter {
+		height: auto !important;
+		width: 250px !important;
+	}
+
+	.mobile.laying {
+		height: auto !important;
+		width: 450px !important;
+	}
+
+	.row.g img {
+		width: 750px;
+		height: 614px;
+	}
+
+	.box.b .pompeiipom {
+		padding-bottom: 2750px;
+	}
+
+
+	.introbox h1 {
+		font-size: 7vw;
+	}
+
+	.introbox h5 {
+		font-size: 4vw;
+	}
+
+	.introbox p {
+		font-size: 2vw;
+	}
+
+	.girl {
+		width: 25vw;
+	}
+
+	.girl.left {
+		top: 50%;
+		transform: translateX(-50vw);
+	}
+
+	.girl.right {
+		transform: translate(25vw, -10vw);
+	}
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -686,6 +775,11 @@ html, body {
 		width: 95%;
 	}
 
+	#video2 {
+		margin-left: 5%;
+		width: 95%;
+	}
+
 	.box.b {
 		margin-top: 100%;
 	}
@@ -696,14 +790,14 @@ html, body {
 
 	.box.b .peachpom {
 		margin-top: 1150px;
-		transform: translateX(-75px);
+		transform: translateX(0px);
 	}
 
 	.box.b .notpeachpom {
 		width: 40%;
 		max-width: 600px;
 		padding-top: 1150px;
-		transform: translateX(150px);
+		transform: translateX(0px);
 	}
 
 	.box.b .pompeiipom {
@@ -711,11 +805,24 @@ html, body {
 		max-width: 600px;
 		padding-top: 1150px;
 		padding-bottom: 2100px;
-		transform: translateX(-150px);
+		transform: translateX(0px);
 	}
 
 	.border.box {
 		display: none;
+	}
+
+	.row.f .fish {
+		margin: 25px 0;
+
+	}
+
+	.row.f .lying {
+		margin: 25px 0;
+	}
+
+	.row.f .alter {
+		margin: 25px 0;
 	}
 }
 
@@ -729,14 +836,12 @@ html, body {
 @media only screen and (max-width: 600px) {
 	.box.b .peachpom {
 		margin-top: 750px;
-		transform: translateX(-75px);
 	}
 
 	.box.b .notpeachpom {
 		width: 40%;
 		max-width: 600px;
 		padding-top: 950px;
-		transform: translateX(150px);
 	}
 
 	.box.b .pompeiipom {
@@ -744,7 +849,6 @@ html, body {
 		max-width: 600px;
 		padding-top: 950px;
 		padding-bottom: 1850px;
-		transform: translateX(-150px);
 	}
 
 	.row.bottom {
@@ -765,18 +869,15 @@ html, body {
 @media only screen and (max-width: 400px) {
 	.box.b .peachpom {
 		margin-top: 550px;
-		transform: translateX(0px);
 	}
 
 	.box.b .notpeachpom {
 		padding-top: 500px;
-		transform: translateX(0px);
 	}
 
 	.box.b .pompeiipom {
 		padding-top: 500px;
-		padding-bottom: 1750px;
-		transform: translateX(0px);
+		padding-bottom: 1650px;
 	}
 
 	.row.bottom {
@@ -785,18 +886,5 @@ html, body {
 
 	.credits {
 		width: 90%;
-	}
-
-	.row.f .fish {
-		margin: 25px 0;
-
-	}
-
-	.row.f .lying {
-		margin: 25px 0;
-	}
-
-	.row.f .alter {
-		margin: 25px 0;
 	}
 }
