@@ -684,8 +684,11 @@ html, body {
 		margin-top: -50px;
 	}
 
+	.row.a {
+		align-items: center;
+	}
+
 	.art.a.marco {
-		padding-right: 15px;
 		height: auto;
 		width: 75%;
 		align-self: center;
