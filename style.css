@@ -132,7 +132,7 @@ html, body {
 }
 
 .back {
-  transform: translateZ(0);
+  transform: translateZ(1) scale(0.5);
 }
 
 .peach {
