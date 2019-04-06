@@ -474,7 +474,7 @@ html, body {
 	justify-content: center;
 	background-color: black;
 	padding-top: 150px;
-	padding-bottom: 25px;
+	padding-bottom: 300px;
 	width: 100%;
 }
 
@@ -806,7 +806,7 @@ html, body {
 	}
 
 	.row.bottom {
-		padding-bottom: 50px;
+		padding-bottom: 0px;
 	}
 
 	.box.b .peachpom {
