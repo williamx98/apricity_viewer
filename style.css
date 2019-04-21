@@ -236,7 +236,7 @@ html, body {
 
 .border {
 	z-index: -10;
-	height: 50%;
+	height: 55%;
 	width: 100%;
 }
 
@@ -608,6 +608,10 @@ html, body {
 		overflow-x: hidden;
 	}
 
+	.mouse {
+		position: absolute;
+		bottom: 50px;
+	}
 
 	.parallax {
 	  perspective: unset;
@@ -654,14 +658,15 @@ html, body {
 	}
 
 	#thing2 h5 {
-		font-size: 6vw;
+		font-size: 5.5vw;
 		margin: 10px 0;
 	}
 
 	#thing2 p {
+		font-family: Roboto,sans-serif;
 		text-align: center;
 		width: 80%;
-		font-size: 4vw;
+		font-size: 3.5vw;
 	}
 
 	.fore {
@@ -888,6 +893,7 @@ html, body {
 }
 
 @media only screen and (max-width: 400px) {
+
 	.box.b .peachpom {
 		margin-top: 550px;
 	}

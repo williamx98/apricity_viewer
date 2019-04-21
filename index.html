@@ -10,6 +10,926 @@
 
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes, width=device-width">
+  <style>
+		/* http://meyerweb.com/eric/tools/css/reset/
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed,
+		figure, figcaption, footer, header, hgroup,
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure,
+		footer, header, hgroup, menu, nav, section {
+		display: block;
+		}
+		body {
+		line-height: 1;
+		}
+		ol, ul {
+		list-style: none;
+		}
+		blockquote, q {
+		quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+		content: '';
+		content: none;
+		}
+		table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		}
+
+		html, body {
+			width: 100%;
+			height: 100%;
+			background-color: black;
+		    max-width: 100%;
+		    overflow-x: hidden;
+		}
+
+		@font-face {
+		  font-family: Butler;
+		  src: url(assets/fonts/Butler_Black.otf);
+		  font-weight: 900;
+		}
+
+
+		@font-face {
+		  font-family: Butler;
+		  src: url(assets/fonts/Butler_Bold.otf);
+		  font-weight: bold;
+		}
+
+		@font-face {
+		  font-family: Butler;
+		  src: url(assets/fonts/Butler_Medium.otf);
+		  font-weight: 700;
+		}
+
+		@font-face {
+		  font-family: Butler;
+		  src: url(assets/fonts/Butler_Regular.otf);
+		  font-weight: normal;
+		}
+
+		@font-face {
+		  font-family: Butler;
+		  src: url(assets/fonts/Butler_Light.otf);
+		  font-weight: 100;
+		}
+
+		@font-face {
+		  font-family: MinionPro;
+		  src: url(assets/fonts/MinionPro_Bold.otf);
+		  font-weight: bold;
+		}
+
+		@font-face {
+		  font-family: MinionPro;
+		  src: url(assets/fonts/MinionPro_Medium.otf);
+		  font-weight: 700;
+		}
+
+		@font-face {
+		  font-family: MinionPro;
+		  src: url(assets/fonts/MinionPro_Regular.otf);
+		  font-weight: normal;
+		}
+
+		.parallax {
+		  perspective: 1px;
+		  min-height: 100%;
+		  height: 100%;
+		  overflow-x: hidden;
+		  overflow-y: auto;
+		  perspective-origin-x: 100%;
+		  scroll-behavior: smooth;
+		}
+
+		.ground {
+		  transform-origin-x: 100%;
+		  min-height: 100%;
+		  height: 100%;
+		  position: absolute;
+		  background-attachment:fixed;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		}
+
+		.fore {
+		  transform: translateZ(-1px) scale(2);
+		}
+
+		.back {
+		}
+
+		.peach {
+			color: #DB5F53;
+		}
+
+		.pomegranates {
+			color: #a65b83;
+		}
+
+		.intro {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			height: 100%;
+			width: 100%;
+			color: white;
+			text-align: center;
+		}
+
+		.text-container {
+			position: relative;
+		}
+
+		.mouse {
+			z-index: 10;
+			overflow:hidden;
+			position:absolute;
+			bottom: 45%;
+			width:18px;
+			margin: -12px;
+			height:40px;
+			border:4px solid white;
+			border-radius:30px;
+			left: 50%;
+		}
+
+		.mouse:after {
+			display: block;
+			content:"";
+			position:absolute;
+			left:10.5px;
+			top: 5px;
+			width:4px;
+			height:4px;
+			margin-left: -3px;
+			background-color: white;
+			border-radius:2px;
+			animation: mouse-wheel 2.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+		}
+
+		@keyframes mouse-wheel {
+		  0% {
+		    transform: translateY(0);
+		    opacity: 0;
+		  }
+		  10% {
+		    transform: translateY(0);
+		    opacity: 1;
+		  }
+		  30% {
+		    transform: translateY(0);
+		    height: 4px;
+		  }
+		  50% {
+		    transform: translateY(0);
+		    height: 20px;
+		  }
+		  70% {
+		    transform: translateY(15px);
+		    height: 4px;
+		    opacity: 1;
+		  }
+		  90% {
+		    opacity: 0;
+		  }
+		  100% {
+		    transform: translateY(15px);
+		    opacity: 0;
+		  }
+		}
+
+		.scroll {
+			position: absolute;
+			z-index: 100;
+		}
+
+		.girl {
+			position: absolute;
+			width: 25em;
+			opacity: 0.5;
+		}
+
+		.girl.left {
+			top: 50%;
+			transform: translateX(-140%);
+		}
+
+		.girl.right {
+			transform: translate(65%, -25%);
+		}
+
+		.border {
+			z-index: -10;
+			height: 55%;
+			width: 100%;
+		}
+
+		.box {
+			position: static;
+		}
+
+		.introbox {
+			color: white;
+			text-align: center;
+			top: 40%;
+		}
+
+		.introbox h1 {
+			font-size: 7em;
+			font-family: Butler;
+			font-weight: bold;
+			letter-spacing: 18px;
+		}
+
+		.introbox h5 {
+			margin: 15px 0px;
+			font-size: 2.3em;
+			font-family: Butler;
+		}
+
+		.introbox p {
+			width: 500px;
+			font-family: Roboto,sans-serif;
+			font-weight: 100;
+			margin: 0 auto;
+			font-size: 1.5em;
+		}
+
+		.box.a {
+			width: 85%;
+			height: 450px;
+			align-self: flex-start;
+			transform: translateY(-50px);
+			background: rgb(83,14,33);
+			background: linear-gradient(90deg, rgba(83,14,33,1) 0%, rgba(219,95,83,1) 100%);
+		}
+
+		.box.b {
+			top: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background: rgb(161,193,241);
+			background: linear-gradient(0deg, rgba(161,193,241,1) 0%, rgba(251,207,219,1) 100%);
+		}
+
+		.box.b .peachpom {
+			width: 65%;
+			max-width: 850px;
+			margin-top: 2000px;
+			transform: translateX(-200px);
+		}
+
+		.box.b .notpeachpom {
+			width: 40%;
+			max-width: 600px;
+			padding-top: 1000px;
+			transform: translateX(-250px);
+		}
+
+		.box.b .pompeiipom {
+			width: 40%;
+			max-width: 600px;
+			padding-top: 2000px;
+			padding-bottom: 3750px;
+			transform: translateX(250px);
+		}
+
+		.box.c {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			background: rgb(207,118,119);
+			background: linear-gradient(90deg, rgba(207,118,119,1) 0%, rgba(103,56,81,1) 100%);
+		}
+
+		.cover {
+			z-index: 10;
+			margin: 50px 50px 0px 50px;
+			width: 50%;
+			max-width: 600px;
+		}
+
+		.box.footer {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.art {
+
+		}
+
+		.art.a {
+			float: right;
+		}
+
+		.art.a h1 {
+			font-family: Roboto,sans-serif;
+			margin: 10px 0;
+		}
+
+		.video.a {
+
+		}
+
+		.iteration {
+			width: 600px;
+			margin: 25px;
+		}
+
+		.seas1 {
+			width: 400px;
+			margin: 25px;
+		}
+
+		.seas2 {
+			width: 500px;
+			margin: 25px;
+		}
+
+		.art-container {
+			max-width: 2000px;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		.row {
+			font-family: Roboto, sans-serif;
+			display: flex;
+			justify-content: center;
+		}
+
+		.row.a {
+			margin-top: 25px;
+		}
+
+		.row.a img {
+			height: 425px;
+			margin: 0 50px 0 0;
+			align-self: flex-end;
+			z-index: 15;
+		}
+
+		.row.b {
+			justify-content: center;
+		}
+
+		.row.b img {
+			margin-top: 35px;
+			height: 650px;
+			width: auto;
+			transform: translateX(100px);
+		}
+
+		.row.f {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.row.f .alter {
+			margin: 35px;
+			height: 450px;
+			width: auto;
+		}
+
+		.row.f .fish {
+			height: 400px;
+			margin: 50px;
+		}
+
+		.row.f .laying {
+			height: 250px;
+			margin: 25px;
+		}
+
+		.row.g {
+			position: relative;
+			overflow: hidden;
+			justify-content: center;
+			width: 100%;
+		}
+
+		.row.g img {
+			margin-top: 35px;
+			height: 750px;
+			width: 918px;
+			margin-bottom: 35px;
+			transform: translateX(-50px);
+		}
+
+
+		.row.h {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			margin: -25px 0 50px 0;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.row.h h1 {
+			margin: 5px;
+		}
+
+
+		.row.bottom {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding-bottom: 50px;
+			width: 100%;
+		}
+
+		.sub-container {
+			transform: translateY(-100px);
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			background-color: black;
+			padding-top: 150px;
+			padding-bottom: 300px;
+			width: 100%;
+		}
+
+		.subtext {
+			padding: 10px;
+			width: 25%;
+			align-self: center;
+		}
+
+		.credits {
+			width: 60%;
+			max-width: 500px;
+			padding: 150px 0;
+		}
+
+		.hover:hover {
+			opacity: 0.75;
+			cursor: pointer;
+		}
+
+		.box.footer {
+			height: 25%;
+		}
+
+		.dancetext {
+			display: inline-block;
+		}
+
+		#thing2 {
+			display: none;
+		}
+
+		@media only screen and (max-width: 1280px) {
+			.intro {
+				height: 90%;
+			}
+
+			.ground {
+				height: 115%;
+			}
+
+			.row.f * {
+				margin: 25px 5px !important;
+			}
+
+			.iteration {
+				width: 550px !important;
+			}
+
+			.row.f .seas1 {
+				width: 250px !important;
+				margin-right: 50px !important;
+			}
+
+			.row.f .seas2 {
+				width: 250px !important;
+				margin-right: 50px !important;
+			}
+
+			.art.a {
+				padding: 0 15px;
+				width: 350px;
+			}
+
+			.row.a img {
+				margin-right: 15px;
+			}
+
+			.row.b img {
+				height: 500px;
+				transform: translateX(20px);
+			}
+
+			.mobile.fish {
+				height: auto !important;
+				width: 500px;
+			}
+
+			.mobile.alter {
+				height: auto !important;
+				width: 250px !important;
+			}
+
+			.mobile.laying {
+				height: auto !important;
+				width: 450px !important;
+			}
+
+			.row.g img {
+				width: 750px;
+				height: 614px;
+			}
+
+			.box.b .pompeiipom {
+				padding-bottom: 3050px;
+			}
+
+			.introbox {
+				top: 30% !important;
+			}
+
+			.introbox h1 {
+				font-size: 7vw;
+			}
+
+			.introbox h5 {
+				font-size: 4vw;
+			}
+
+			.introbox p {
+				font-size: 1.75vw;
+			}
+
+			.girl {
+				width: 25vw;
+			}
+
+			.girl.left {
+				top: 50%;
+				transform: translateX(-50vw);
+			}
+
+			.girl.right {
+				transform: translate(25vw, -10vw);
+			}
+
+		}
+
+		@media only screen and (max-width: 800px) {
+			html, body {
+				overflow-x: hidden;
+			}
+
+			.mouse {
+				position: absolute;
+				bottom: 50px;
+			}
+
+			.parallax {
+			  perspective: unset;
+			  height: 100%;
+			  overflow-y: unset;
+			  perspective-origin-x: unset;
+			  scroll-behavior: smooth;
+		      max-width: 100%;
+		      overflow-x: hidden;
+			}
+
+			#thing2 {
+				height: 100%;
+				width: 100%;
+				z-index: 1000;
+				position: absolute;
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			.girl-container {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0.3;
+			}
+
+			.mgirl {
+				height: 25%;
+				padding-bottom: 50%;
+			}
+
+			#thing2 h1 {
+				font-size: 9vw;
+				margin-left: 18px;
+				letter-spacing: 18px;
+			}
+
+			#thing2 h5 {
+				font-size: 5.5vw;
+				margin: 10px 0;
+			}
+
+			#thing2 p {
+				font-family: Roboto,sans-serif;
+				text-align: center;
+				width: 80%;
+				font-size: 3.5vw;
+			}
+
+			.fore {
+			  z-index: unset;
+			  transform: unset;
+			}
+
+			.back {
+			  z-index: -10;
+			  transform: unset;
+			}
+
+			.parallax {
+			  perspective: unset;
+			}
+
+
+			.box.a {
+				width: 95%;
+			}
+
+			.row {
+				flex-direction: column;
+			}
+
+			.row.a img {
+				height: 300px;
+				margin: 0 50px 50px 0;
+				align-self: flex-end;
+				z-index: 15;
+				transform: unset;
+			}
+
+			.row.a .sun {
+				height: auto;
+				width: 80%;
+				align-self: center;
+				margin-top: -50px;
+			}
+
+			.row.a {
+				align-items: center;
+			}
+
+			.art.a.marco {
+				height: auto;
+				width: 100%;
+				align-self: center;
+			}
+
+			.art.a {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.art.a h1 {
+				width: 75%;
+				align-self: center;
+			}
+
+			.art.a h1 {
+				font-size: 0.75em;
+				margin: 2px 0;
+			}
+
+			.girl.left {
+				display: none;
+			}
+
+			.girl.right {
+				display: none;
+			}
+
+			.row.b img {
+				height: 300px;
+				max-width: 90%;
+				margin-top: 35px;
+				transform: unset;
+			}
+
+			.row.b .hooks {
+				height: auto;
+				width: 90%;
+				align-self: center;
+			}
+
+			.iteration {
+				max-width: 90%;
+			}
+
+			.seas1 {
+				height: auto;
+				width: 80%;
+				align-self: center;
+				margin: 0;
+			}
+
+			.seas2 {
+				height: auto;
+				width: 80%;
+				align-self: center;
+				margin: 0;
+			}
+
+			.row.f .fish {
+				height: auto;
+				width: 95%;
+			}
+
+			.row.f .alter {
+				height: auto;
+				width: 90%;
+			}
+
+			.row.f .laying {
+				height: auto;
+				width: 90% !important;
+				align-self: center;
+			}
+
+			.row.g img {
+				height: auto;
+				width: 100%;
+				transform: unset;
+			}
+
+			.mobilething {
+				width: 100%;
+			}
+
+			.video2 {
+				width: 95%;
+			}
+
+			#video2 {
+				margin-left: 5%;
+				width: 95%;
+			}
+
+			.box.b {
+				margin-top: 100%;
+			}
+
+			.row.bottom {
+				padding-bottom: 0px;
+			}
+
+			.box.b .peachpom {
+				margin-top: 1150px;
+				transform: translateX(0px);
+			}
+
+			.box.b .notpeachpom {
+				width: 40%;
+				max-width: 600px;
+				padding-top: 1150px;
+				transform: translateX(0px);
+			}
+
+			.box.b .pompeiipom {
+				width: 40%;
+				max-width: 600px;
+				padding-top: 1150px;
+				padding-bottom: 2100px;
+				transform: translateX(0px);
+			}
+
+			.border.box {
+				display: none;
+			}
+
+			.row.f .fish {
+				margin: 25px 0;
+
+			}
+
+			.row.f .lying {
+				margin: 25px 0;
+			}
+
+			.row.f .alter {
+				margin: 25px 0;
+			}
+		}
+
+		@media only screen and (max-width: 700px) {
+			.box.b .pompeiipom {
+				padding-bottom: 1625px;
+			}
+		}
+
+
+		@media only screen and (max-width: 600px) {
+			.box.b .peachpom {
+				margin-top: 750px;
+			}
+
+			.box.b .notpeachpom {
+				width: 40%;
+				max-width: 600px;
+				padding-top: 950px;
+			}
+
+			.box.b .pompeiipom {
+				width: 40%;
+				max-width: 600px;
+				padding-top: 950px;
+				padding-bottom: 1850px;
+			}
+
+			.row.bottom {
+				padding-bottom: 50px;
+			}
+
+			.credits {
+				width: 90%;
+			}
+		}
+
+		@media only screen and (max-width: 500px) {
+			.box.b .pompeiipom {
+				padding-bottom: 1225px;
+			}
+		}
+
+		@media only screen and (max-width: 400px) {
+
+			.box.b .peachpom {
+				margin-top: 550px;
+			}
+
+			.box.b .notpeachpom {
+				padding-top: 500px;
+			}
+
+			.box.b .pompeiipom {
+				padding-top: 500px;
+				padding-bottom: 1650px;
+			}
+
+			.row.bottom {
+				padding-bottom: 50px;
+			}
+
+			.credits {
+				width: 90%;
+			}
+		}
+
+  </style>
 </head>
 
 <body>
@@ -17,12 +937,13 @@
 
 	<div id="thing2" class="border box">
 		<div class="girl-container">
-			<img class="mgirl l" src="assets/pics/peach girl.png"/>
-			<img class="mgirl r" src="assets/pics/pomegranate head gal.png"/>
+			<img class="mgirl l" src="https://apricitymagazine.com/wp-content/uploads/2019/04/peach-girl.png"/>
+			<img class="mgirl r" src="https://apricitymagazine.com/wp-content/uploads/2019/04/pomegranate-head-gal.png"/>
 		</div>
 		<h1>APRICITY</h1>
 		<h5>2019 VOLUME III</h5>
 		<p>Welcome to the study of <span class="peach">peaches</span> and <span class="pomegranates">pomegranates</span>. Both of these fruits explore the essences of <span class="pomegranates">Persephone</span> and <span class="peach">Xiwangmu</span>, a western goddess of death and an eastern goddess of life. This volume explores the tender dichotomy of the heavens and the underworld.</p>
+		<div class="mouse"></div>
 	</div>
 
 	<div class="parallax">
@@ -36,24 +957,24 @@
 			<div class="box b">
 				<div class="box a"></div>
 
-				<img class="peachpom" src="assets/pics/PeachPom deco.png"/>
-				<img class="notpeachpom" src="assets/pics/chinese peach.png"/>
-				<img class="pompeiipom" src="assets/pics/pompeii pom.png"/>
+				<img class="peachpom" src="https://apricitymagazine.com/wp-content/uploads/2019/04/PeachPom-deco.png"/>
+				<img class="notpeachpom" src="https://apricitymagazine.com/wp-content/uploads/2019/04/chinese-peach.png"/>
+				<img class="pompeiipom" src="https://apricitymagazine.com/wp-content/uploads/2019/04/pompeii-pom.png"/>
 			</div>
 		</div>
 		<div class="ground fore">
 			<div class="intro">
 				<div class="text-container">
-					<img class="girl left" src="assets/pics/peach girl.png"/>
-					<img class="girl right" src="assets/pics/pomegranate head gal.png"/>
+					<img class="girl left" src="https://apricitymagazine.com/wp-content/uploads/2019/04/peach-girl.png"/>
+					<img class="girl right" src="https://apricitymagazine.com/wp-content/uploads/2019/04/pomegranate-head-gal.png"/>
 				</div>
 			</div>
 			<div class="art-container">
 				<div class="row a">
-					<img class="sun" src="assets/pics/sun seeker.png">
+					<img class="sun" src="https://apricitymagazine.com/wp-content/uploads/2019/04/sun-seeker.png">
 					<div>
 						<div style="display: flex; flex-direction: column;">
-							<img src="assets/vids/a.gif"/>
+							<img src="https://apricitymagazine.com/wp-content/uploads/2019/04/a.gif"/>
 							<h1>I N T E R A C T I O N (A)/144/</h1>
 							<h1>Artist | Marco Mori</h1>
 							<h1>Animation</h1>
@@ -61,27 +982,27 @@
 					</div>
 				</div>
 				<div class="row b">
-					<img class="hooks" src="assets/pics/Hooks.png"/>
+					<img class="hooks" src="https://apricitymagazine.com/wp-content/uploads/2019/04/Hooks.png"/>
 				</div>
 
 				<div class="row f">
-					<img class="iteration" src="assets/pics/iteration (sestina).png"/>
+					<img class="iteration" src="https://apricitymagazine.com/wp-content/uploads/2019/04/iteration-sestina.png"/>
 					<div class="mobilething" style="display: flex; flex-direction: column;">
-						<img class="mobile seas1" src="assets/pics/our_changing_seas_1.png"/>
-						<img class="mobile seas2" src="assets/pics/our_changing_seas_2.png"/>
+						<img class="mobile seas1" src="https://apricitymagazine.com/wp-content/uploads/2019/04/our_changing_seas_1.png"/>
+						<img class="mobile seas2" src="https://apricitymagazine.com/wp-content/uploads/2019/04/our_changing_seas_2.png"/>
 					</div>
 				</div>
 
 				<div class="row f">
-					<img class="mobile alter" src="assets/pics/alter ego.png"/>
+					<img class="mobile alter" src="https://apricitymagazine.com/wp-content/uploads/2019/04/alter-ego.png"/>
 					<div class="mobilething" style="display: flex; flex-direction: column;">
-						<img class="mobile fish" src="assets/pics/Gentle Fish.png"/>
-						<img class="mobile laying" src="assets/pics/laying down_.png"/>
+						<img class="mobile fish" src="https://apricitymagazine.com/wp-content/uploads/2019/04/Gentle-Fish.png"/>
+						<img class="mobile laying" src="https://apricitymagazine.com/wp-content/uploads/2019/04/laying-down_.png"/>
 					</div>
 				</div>
 
 				<div class="row g">
-					<img src="assets/pics/fox bellies.png"/>
+					<img src="https://apricitymagazine.com/wp-content/uploads/2019/04/fox-bellies.png"/>
 				</div>
 
 				<div class="row h">
@@ -95,13 +1016,13 @@
 					</div>
 				</div>
 				<div class="row bottom box c">
-					<img class="cover" src="assets/pics/Potential Cover (this image needs to be able to be updated).png"/>
+					<img class="cover" src="https://apricitymagazine.com/wp-content/uploads/2019/04/Potential-Cover-this-image-needs-to-be-able-to-be-updated.png"/>
 					<div class="sub-container">
 						<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-							<img class="subtext" src="assets/pics/To order the full version of Apricity Volume III, press subscri.png">
-							<a class="subtext" href="https://apricitymagazine.com/subscribe/"><img class="hover" width="100%" src="assets/pics/subscribe w_out hover.png"></a>
+							<img class="subtext" src="https://apricitymagazine.com/wp-content/uploads/2019/04/To-order-the-full-version-of-Apricity-Volume-III-press-subscri.png">
+							<a class="subtext" href="https://apricitymagazine.com/subscribe/"><img class="hover" width="100%" src="https://apricitymagazine.com/wp-content/uploads/2019/04/subscribe-w_out-hover.png"></a>
 						</div>
-						<img class="credits" src="assets/pics/Designers _ Eileen Bau, Margaret Siu, Isabel Canales  Web Devel.png"/>
+						<img class="credits" src="https://apricitymagazine.com/wp-content/uploads/2019/04/Designers-_-Eileen-Bau-Margaret-Siu-Isabel-Canales-Web-Devel.png"/>
 					</div>
 				</div>
 			</div>
